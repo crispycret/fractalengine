@@ -2,11 +2,12 @@ import { Button, Container, ListGroup, Image } from "react-bootstrap"
 
 import Theme from "../helpers/hooks/useTheme"
 import ThemedComponent from "../components/utils/theme/ThemedComponent";
-import ThemeToggler from "../components/utils/theme/ThemeToggler";
 import Header from "../components/Home/Header";
 import Spacing from "../components/utils/Spacing";
 import { Link } from "react-router-dom";
 
+
+import darkMandelbrot from '../assets/images/darkMandelbrot.png'
 
 
 
@@ -16,7 +17,9 @@ interface HomeProps {
 export const Home = ({theme}: HomeProps) => {
 
     const backgroundLight = 'https://wallpapercave.com/dwp2x/J1lLMYg.png'
-    const backgroundDark = 'https://files.realpython.com/media/wikimedia_Mandel_zoom_00_mandelbrot_set.54d99530ad68.jpg'
+    const backgroundDark = new URL(darkMandelbrot)
+
+    console.log(backgroundDark)
 
     return (
     // <ThemedComponent theme={theme}>
@@ -35,6 +38,7 @@ export const Home = ({theme}: HomeProps) => {
                 {/* <Spacing count={4} /> */}
 
                 <div className='block w-100 h-100' style={{ 
+                    backgroundAttachment: 'fixed',
                     backgroundSize: '100vw 100vh',
                     backgroundImage: `url(${theme.isDark ? backgroundDark : backgroundLight})` 
                 }}/> 

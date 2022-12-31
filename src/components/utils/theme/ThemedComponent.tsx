@@ -9,11 +9,12 @@ import Theme from '../../../helpers/hooks/useTheme';
 
 export type ThemedComponent = {
     theme: Theme,
+    transparent?: boolean,
     children: JSX.Element[] | JSX.Element
 }
 
 
-export const ThemedComponent = ({theme, children}: ThemedComponent) => {
+export const ThemedComponent = ({theme, transparent, children}: ThemedComponent) => {
 
     /**
      * Apply a function recursively to all children in the given list of elements.
@@ -27,9 +28,12 @@ export const ThemedComponent = ({theme, children}: ThemedComponent) => {
         return React.Children.map(children, child => {
             if (!child.props) return child
 
+            let __classname = theme.isDark ? 'bg-dark text-primary ' : 'text-light '
+            __classname = transparent ? __classname + 'bg-transparent ' : __classname
+
             let props: any = {
                 ...child.props,
-                className:  `${theme.isDark ? 'bg-dark text-primary ' : 'text-light '}${child.props.className? child.props.className: ''}`
+                className:  `${__classname} ${child.props.className? child.props.className: ''}`
             }
 
             // Apply this to all children recursively

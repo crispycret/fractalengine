@@ -10,13 +10,15 @@ import { Link } from "react-router-dom";
 
 
 
+import darkMandelbrot from '../../assets/images/darkMandelbrot.png'
+
 interface HomeProps {
     theme: Theme;
 }
 export const Home = ({theme}: HomeProps) => {
 
     const backgroundLight = 'https://wallpapercave.com/dwp2x/J1lLMYg.png'
-    const backgroundDark = 'https://files.realpython.com/media/wikimedia_Mandel_zoom_00_mandelbrot_set.54d99530ad68.jpg'
+    const backgroundDark = darkMandelbrot
 
     return (
     // <ThemedComponent theme={theme}>
