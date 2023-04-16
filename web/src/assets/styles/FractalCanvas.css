@@ -1,0 +1,38 @@
+
+
+#FractalCanvasContainer {
+    /*      Top LEFT BOTTOM RIGHT      */
+    margin: 5vh auto 5vh auto;
+    display: inline flex;
+    height: 85vh;
+  }
+
+#fractal-parameters {
+    display: inline-block;
+    margin: auto;
+}
+
+.fractal-param {
+    display: block;
+    padding-right: 1vw;
+    padding: 1vw;
+}
+
+.fractal-param label {
+    padding-right: 2vw;
+    float: left;
+}
+.fractal-param input {
+    float: right;
+}
+
+.block {
+    display: block;
+}
+
+#fractal-canvas {
+    margin: auto;
+    background-color: black;
+}
+  
+
